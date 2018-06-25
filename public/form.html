@@ -11,8 +11,8 @@
 <div ng-app = "myApp" ng-controller="myCtrl">
 	<form method="get">
 	Priority 1<br>
-		<input type="radio" name="sort" value="high" checked> Highest<br>
-		<input type="radio" name="sort" value="low"> Lowest<br>
+		<input type="radio" name="sort" value="high" checked ng-model="firstName"> Highest<br>
+		<input type="radio" name="sort" value="low" ng-model="lastName"> Lowest<br>
 
 		<select name="priority1">
 			<option selected> </option>
