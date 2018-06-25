@@ -15,23 +15,6 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-
-router.get('/users', function(req, res, next) {
-  pg.connect(conString, function(err, client, done) {
-    if (err) {
-      return console.error('error fetching client from pool', err);
-    }
-    console.log("connected to database");
-    client.query('SELECT * FROM type', function(err, result) {
-      done();
-      if (err) {
-        return console.error('error running query', err);
-      }
-      res.send(result);
-    });
-  });
-});
-
 app.get('/math', function(request, response) {
 	handleMath(request, response);
 });
