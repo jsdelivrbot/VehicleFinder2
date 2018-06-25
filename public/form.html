@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Math Submission Form</title>
+	<title>Vehicle Finder</title>
 </head>
 <body>
-	<h1>Postage Calculator</h1>
-	<p> Priority 1: </p>
-	<form action="/vehicle" method="get">
+	<h1>Vehicle Finder</h1>
 
+	<form action="/vehicle" method="get">
+	<p>Priority 1: </p>
 		<input type="radio" name="sort" value="high" checked> Highest<br>
 		<input type="radio" name="sort" value="low"> Lowest<br>
 
 		<select name="priority1">
+			<option>Weight (lbs)</option>
+			<option>Power (horsepower)</option>
+			<option>Size (cubic feet)</option>
+			<option>Speed (mph)</option>
+			<option>Price ($)</option>
+			<option>Fuel Economy (mpg)</option>
+		</select>
+	<p>Priority 2: </p>
+		<input type="radio" name="sort" value="high" checked> Highest<br>
+		<input type="radio" name="sort" value="low"> Lowest<br>
+
+		<select name="priority2">
 			<option>Weight (lbs)</option>
 			<option>Power (horsepower)</option>
 			<option>Size (cubic feet)</option>
