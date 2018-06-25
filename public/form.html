@@ -18,12 +18,28 @@
 	</div>
 
 	<script>
+	var pg = require('pg');
 	var app = angular.module('myApp', []);
+	var conString = 'postgres://jmjpstzyyzexxe:127c8c9e3b14656d5e45ae9fc2904a79c958c74612e63fdb5384d3986fe743ff@ec2-54-225-76-243.compute-1.amazonaws.com:5432/dbcd7ut9b6om9r';
 	app.controller('personCtrl', function($scope) {
+
+		pg.connect(conString, function(err, client, done) {
+	    if (err) {
+	      return console.error('error fetching client from pool', err);
+	    }
+	    console.log("connected to database");
+	    client.query('SELECT name FROM vehicle', function(err, result) {
+	      done();
+	      if (err) {
+	        return console.error('error running query', err);
+	      }
+			});
+		});
+
 	    $scope.firstName = "John";
 	    $scope.lastName = "Doe";
 	    $scope.fullName = function() {
-	        return $scope.firstName + " " + $scope.lastName;
+        return result.rows[0].name + " " + result.rows[1].name;
 	    };
 	});
 	</script>
