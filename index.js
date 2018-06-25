@@ -2,6 +2,9 @@ var express = require('express');
 var app = express();
 var url = require('url');
 
+var pg = require('pg');
+var conString = 'postgres://postgresql-slippery-98712';
+
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -9,6 +12,23 @@ app.use(express.static(__dirname + '/public'));
 // views is directory for all template files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+
+
+router.get('/users', function(req, res, next) {
+  pg.connect(conString, function(err, client, done) {
+    if (err) {
+      return console.error('error fetching client from pool', err);
+    }
+    console.log("connected to database");
+    client.query('SELECT * FROM type', function(err, result) {
+      done();
+      if (err) {
+        return console.error('error running query', err);
+      }
+      res.send(result);
+    });
+  });
+});
 
 app.get('/math', function(request, response) {
 	handleMath(request, response);
