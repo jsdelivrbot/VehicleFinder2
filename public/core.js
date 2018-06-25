@@ -14,8 +14,9 @@ app.controller('myCtrl', function($scope) {
       if (err) {
         return console.error('error running query', err);
       }
-      $scope.firstName = result.rows[0].name;
-      $scope.lastName = result.rows[1].name;
+      $scope.fullName = function() {
+        return result.rows[0].name + " " + result.rows[1].name;
+      };
     });
   });
 });
