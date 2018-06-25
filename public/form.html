@@ -5,15 +5,20 @@
 </head>
 <body>
 	<h1>Postage Calculator</h1>
+	<p> Priority 1: </p>
 	<form action="/vehicle" method="get">
-		<select name="operation">
-			<option>Letters (Stamped)</option>
-			<option>Letters (Metered)</option>
-			<option>Large Envelopes (Flats)</option>
-			<option>First-Class Package Service - Retail</option>
-		</select>
 
-		<input type="text" name="operand1">oz
+		<input type="radio" name="sort" value="high" checked> Highest<br>
+		<input type="radio" name="sort" value="low"> Lowest<br>
+
+		<select name="priority1">
+			<option>Weight (lbs)</option>
+			<option>Power (horsepower)</option>
+			<option>Size (cubic feet)</option>
+			<option>Speed (mph)</option>
+			<option>Price ($)</option>
+			<option>Fuel Economy (mpg)</option>
+		</select>
 
 		<br><br>
 		<input type="submit" value="Get Result">
