@@ -18,7 +18,7 @@ router.get('/users', function(req, res, next) {
       if (err) {
         return console.error('error running query', err);
       }
-      res.send(result.rows);
+      res.send(result.rows[1]);
     });
   });
 });
