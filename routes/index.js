@@ -3,7 +3,7 @@ var router = express.Router();
 
 //pg config
 var pg = require('pg');
-var conString = 'postgres://@localhost/pg_demo_db';
+var conString = 'postgres://postgresql-slippery-98712';
 
 //Users
 //get all users
@@ -13,7 +13,7 @@ router.get('/users', function(req, res, next) {
       return console.error('error fetching client from pool', err);
     }
     console.log("connected to database");
-    client.query('SELECT * FROM users', function(err, result) {
+    client.query('SELECT * FROM type', function(err, result) {
       done();
       if (err) {
         return console.error('error running query', err);
