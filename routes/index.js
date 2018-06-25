@@ -7,8 +7,6 @@ var conString = 'postgres://jmjpstzyyzexxe:127c8c9e3b14656d5e45ae9fc2904a79c958c
 
 //Users
 //get all users
-var html = "<div id='email_window'><h2>Email Share</h2><div>";
-$("#data").html(html);
 router.get('/vehicle', function(req, res, next) {
   pg.connect(conString, function(err, client, done) {
     if (err) {
