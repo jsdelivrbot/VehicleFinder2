@@ -1,10 +1,12 @@
 var express = require('express');
+var router = express.Router();
 var app = express();
 var url = require('url');
 
 var pg = require('pg');
 var conString = 'postgres://postgresql-slippery-98712';
 
+module.exports = router;
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
