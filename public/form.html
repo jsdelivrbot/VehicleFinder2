@@ -6,7 +6,7 @@
 <body>
 	<h1>Vehicle Finder</h1>
 
-	<form action="/vehicle" method="get">
+	<form method="get">
 	<p>Priority 1: </p>
 		<input type="radio" name="sort" value="high" checked> Highest<br>
 		<input type="radio" name="sort" value="low"> Lowest<br>
@@ -19,6 +19,8 @@
 			<option>Price ($)</option>
 			<option>Fuel Economy (mpg)</option>
 		</select>
+	</form>
+	<form method="get">
 	<p>Priority 2: </p>
 		<input type="radio" name="sort" value="high" checked> Highest<br>
 		<input type="radio" name="sort" value="low"> Lowest<br>
@@ -33,7 +35,6 @@
 		</select>
 
 		<br><br>
-		<input type="submit" value="Get Result">
 
 	</form>
 </body>
