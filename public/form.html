@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type="text/javascript" src="../routes/index.js"></script>
 <head>
 	<title>Vehicle Finder</title>
 </head>
 <body>
 	<h1>Vehicle Finder</h1>
-
+	
+<div ng-app = "myApp" ng-controller="myCtrl">
 	<form method="get">
-	Priority 1:<br>
+	Priority 1<br>
 		<input type="radio" name="sort" value="high" checked> Highest<br>
 		<input type="radio" name="sort" value="low"> Lowest<br>
 
@@ -21,9 +24,10 @@
 			<option>Fuel Economy (mpg)</option>
 		</select>
 	</form><br>
+</div>
 
 	<form method="get">
-	Priority 2:<br>
+	Priority 2<br>
 		<input type="radio" name="sort" value="high" checked> Highest<br>
 		<input type="radio" name="sort" value="low"> Lowest<br>
 
@@ -39,7 +43,7 @@
 	</form><br>
 
 	<form method="get">
-	Priority 3:<br>
+	Priority 3<br>
 		<input type="radio" name="sort" value="high" checked> Highest<br>
 		<input type="radio" name="sort" value="low"> Lowest<br>
 
@@ -55,7 +59,7 @@
 	</form><br>
 
 	<form method="get">
-	Priority 4:<br>
+	Priority 4<br>
 		<input type="radio" name="sort" value="high" checked> Highest<br>
 		<input type="radio" name="sort" value="low"> Lowest<br>
 
@@ -71,7 +75,7 @@
 	</form><br>
 
 	<form method="get">
-	Priority 5:<br>
+	Priority 5<br>
 		<input type="radio" name="sort" value="high" checked> Highest<br>
 		<input type="radio" name="sort" value="low"> Lowest<br>
 
@@ -87,7 +91,7 @@
 	</form><br>
 
 	<form method="get">
-	Priority 6:<br>
+	Priority 6<br>
 		<input type="radio" name="sort" value="high" checked> Highest<br>
 		<input type="radio" name="sort" value="low"> Lowest<br>
 
