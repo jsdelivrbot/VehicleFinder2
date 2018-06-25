@@ -3,7 +3,7 @@ var router = express.Router();
 
 //pg config
 var pg = require('pg');
-var conString = 'postgres://postgresql-slippery-98712';
+var conString = 'postgresql-slippery-98712';
 
 //Users
 //get all users
