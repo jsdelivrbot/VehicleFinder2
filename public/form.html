@@ -39,7 +39,7 @@
 	    $scope.firstName = "John";
 	    $scope.lastName = "Doe";
 	    $scope.fullName = function() {
-        return result.rows[0].name + " " + result.rows[1].name;
+	        return $scope.firstName + " " + $scope.lastName;
 	    };
 	});
 	</script>
