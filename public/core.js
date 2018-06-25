@@ -14,7 +14,8 @@ app.controller('myCtrl', function($scope) {
       if (err) {
         return console.error('error running query', err);
       }
-      res.send(result.rows[1].name); //Returns {"name":"test_car"}
+      $scope.firstName = result.rows[0].name;
+      $scope.lastName = result.rows[1].name;
     });
   });
 });
