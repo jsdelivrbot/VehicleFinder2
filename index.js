@@ -23,8 +23,8 @@ function getVehicle(request, response) {
 		if (error || result == null) {
 			response.status(500).json({success: false, data: error});
 		} else {
-			var vehicle = result;
-			response.status(200).json(result);
+			var vehicle = result[0];
+			response.status(200).json(result[0]);
 		}
 	});
 }
