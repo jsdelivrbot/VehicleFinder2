@@ -20,7 +20,7 @@ function getVehicle(request, response) {
 	var id = request.query.id;
 	var type = request.query.type;
 	getVehicleFromDb(id, type, function(error, result) {
-		if (error || result == null || result.length != 1) {
+		if (error || result == null) {
 			response.status(500).json({success: false, data: error});
 		} else {
 			var vehicle = result[0];
