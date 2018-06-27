@@ -12,7 +12,7 @@ const pool = new Pool({connectionString: connectionString});
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 app.get('/getVehicle', function(request, response) {
-	getPerson(request, response);
+	getVehicle(request, response);
 });
 
 app.listen(app.get('port'), function() {
