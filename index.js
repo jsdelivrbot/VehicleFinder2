@@ -23,15 +23,37 @@ function getVehicle(request, response) {
 		if (error || result == null) {
 			response.status(500).json({success: false, data: error});
 		} else {
-			var vehicle = result[0];
-			response.status(200).json(result[0]);
+			var vehicle = result;
+			response.status(200).json(result);
 		}
 	});
 }
 
 function getVehicleFromDb(pri1, pri2, callback) {
 	console.log("Getting vehicle from DB with pri1: " + pri1 + " and pri2: " + pri2);
-	var sql = "SELECT * FROM vehicle WHERE $1 = 31 and $2 = 1";
+	switch(pri1) {
+    case 1:
+        var sql = "SELECT * FROM vehicle ORDER BY type DESC";
+        break;
+    case 2:
+        var sql = "SELECT * FROM vehicle ORDER BY weight DESC";
+        break;
+		case 3:
+        var sql = "SELECT * FROM vehicle ORDER BY power DESC";
+        break;
+		case 4:
+				var sql = "SELECT * FROM vehicle ORDER BY size DESC";
+				break;
+		case 5:
+				var sql = "SELECT * FROM vehicle ORDER BY speed DESC";
+				break;
+		case 6:
+				var sql = "SELECT * FROM vehicle ORDER BY price DESC";
+				break;
+    default:
+        var sql = "SELECT * FROM vehicle ORDER BY fuel_economy DESC";
+}
+
 	var params = [pri1, pri2];
 
 
