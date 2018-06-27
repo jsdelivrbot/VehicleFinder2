@@ -30,8 +30,8 @@ function getVehicle(request, response) {
 }
 
 function getVehicleFromDb(id, type, callback) {
-	console.log("Getting vehicle from DB with id: " + id);
-	var sql = "SELECT * FROM vehicle WHERE fuel_economy = $1::int and type = $2::int";
+	console.log("Getting vehicle from DB with id: " + id + " " + type);
+	var sql = "SELECT * FROM vehicle WHERE fuel_economy = $1 and type = $2";
 	var params = [id, type];
 
 
