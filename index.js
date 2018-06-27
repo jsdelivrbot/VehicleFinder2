@@ -8,7 +8,7 @@ const { Pool } = require("pg"); // This is the postgres database connection modu
 
 // This says to use the connection string from the environment variable, if it is there,
 // otherwise, it will use a connection string that refers to a local postgres DB
-const connectionString = "postgres://ldmdzzhecofrzg:a93dfe93169e13887b35d0dfd97de00b6f0acc285777c9b7aed3ea1c8ca63245@ec2-54-83-12-150.compute-1.amazonaws.com:5432/d67udl2mh0iphv";
+const connectionString = "postgres://ldmdzzhecofrzg:a93dfe93169e13887b35d0dfd97de00b6f0acc285777c9baed3ea1c8ca63245@ec2-54-83-12-150.compute-1.amazonaws.com:5432/d67udl2mh0iphv";
 
 // Establish a new connection to the data source specified the connection string.
 const pool = new Pool({connectionString: connectionString});
