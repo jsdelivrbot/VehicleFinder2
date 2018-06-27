@@ -57,7 +57,7 @@ function getVehicleFromDb(pri1, pri2, callback) {
 	var params = [pri1, pri2];
 
 
-	pool.query(sql, params, function(err, result) {
+	pool.query(sql, function(err, result) {
 		if (err) {
 			console.log("Error in query: ")
 			console.log(err);
