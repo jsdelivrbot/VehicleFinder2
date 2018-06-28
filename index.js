@@ -41,7 +41,7 @@ function getVehicle(request, response) {
 						}
 						else{
 							var j = i;
-							while(indexes.includes(vehicle1[j].id) && j < vehicle1.length){
+							while(indexes.includes(vehicle1[j].id) && j + 1 < vehicle1.length){
 							   j++;
 								 console.log(j + " ");
 							 }
