@@ -19,18 +19,27 @@ app.listen(app.get('port'), function() {
 function getVehicle(request, response) {
 	var pri1 = request.query.pri1;
 	var pri2 = request.query.pri2;
-	getVehicleFromDb(pri1, pri2, function(error, result) {
+	getVehicleFromDb(pri1, function(error, result) {
 		if (error || result == null) {
 			response.status(500).json({success: false, data: error});
 		} else {
-			var vehicle = result[0];
+			var vehicle1 = result[0];
 			response.status(200).json(result[0]);
+			getVehicleFromDb(pri2, function(error, result) {
+				if (error || result == null) {
+					response.status(500).json({success: false, data: error});
+				} else {
+					var vehicle2 = result[0];
+					response.status(200).json(result[0]);
+				}
+			});
+
 		}
 	});
 }
 
-function getVehicleFromDb(pri1, pri2, callback) {
-	console.log("Getting vehicle from DB with pri1: " + pri1 + " and pri2: " + pri2);
+function getVehicleFromDb(pri1, callback) {
+	console.log("Getting vehicle from DB with pri1: " + pri1);
 	switch(pri1) {
     case "1":
         var sql = "SELECT * FROM vehicle ORDER BY type DESC";
@@ -53,10 +62,7 @@ function getVehicleFromDb(pri1, pri2, callback) {
     default:
         var sql = "SELECT * FROM vehicle ORDER BY fuel_economy DESC";
 }
-				console.log(sql);
-	var params = [pri1, pri2];
-
-
+	//var params = [pri1, pri2];
 	pool.query(sql, function(err, result) {
 		if (err) {
 			console.log("Error in query: ")
