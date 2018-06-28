@@ -34,11 +34,9 @@ function getVehicleFromDb(pri1, pri2, callback) {
 	switch(pri1) {
     case 1:
         var sql = "SELECT * FROM vehicle ORDER BY type DESC LIMIT 1";
-				console.log("THIS 1");
         break;
     case 2:
         var sql = "SELECT * FROM vehicle ORDER BY weight DESC LIMIT 1";
-				console.log("THIS 2");
         break;
 		case 3:
         var sql = "SELECT * FROM vehicle ORDER BY power DESC";
@@ -55,7 +53,7 @@ function getVehicleFromDb(pri1, pri2, callback) {
     default:
         var sql = "SELECT * FROM vehicle ORDER BY fuel_economy DESC";
 }
-
+				console.log(sql);
 	var params = [pri1, pri2];
 
 
