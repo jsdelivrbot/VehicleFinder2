@@ -33,13 +33,15 @@ function getVehicle(request, response) {
 					var vehicle3 = [];
 					var indexes = [];
 					var i;
+					var k = 0;
 					var negate = 1;
 					for (i = 0; i < vehicle1.length; i++){
-						if (negate == -1 && !indexes.includes(vehicle2[i].id)){
+						if (negate == -1 && !indexes.includes(vehicle2[k].id)){
 							negate = 1;
-						vehicle3.push(vehicle2[i]);
-						console.log("ONE: " + vehicle2[i].id);
-						indexes.push(vehicle2[i].id);
+						vehicle3.push(vehicle2[k]);
+						console.log("ONE: " + vehicle2[k].id);
+						indexes.push(vehicle2[k].id);
+						k++;
 						}
 						else{
 							var j = i;
