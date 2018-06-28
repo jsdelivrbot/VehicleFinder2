@@ -34,6 +34,7 @@ function getVehicle(request, response) {
 					var indexes = [];
 					var i;
 					var k = 0;
+					var l = 0;
 					var negate = 1;
 					for (i = 0; i < vehicle1.length; i++){
 						if (negate == -1 && !indexes.includes(vehicle2[k].id)){
@@ -44,8 +45,8 @@ function getVehicle(request, response) {
 						k++;
 						}
 						else{
-							var j = i;
-							while(indexes.includes(vehicle1[j].id) && (j + 1) % vehicle1.length != i){
+							var j = l;
+							while(indexes.includes(vehicle1[j].id) && (j + 1) % vehicle1.length != l){
 								if (j + 1 == vehicle1.length)
 								    j = 0;
 								else
@@ -55,6 +56,7 @@ function getVehicle(request, response) {
 							vehicle3.push(vehicle1[j]);
 							console.log("TWO: " + vehicle1[j].id);
 							indexes.push(vehicle1[j].id)
+							l++;
 						}
 					}
 
