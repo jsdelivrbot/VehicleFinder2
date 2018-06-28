@@ -23,14 +23,20 @@ function getVehicle(request, response) {
 		if (error || result == null) {
 			response.status(500).json({success: false, data: error});
 		} else {
-			var vehicle1 = result[0];
+			var vehicle1 = result;
 
 			getVehicleFromDb(pri2, function(error, result) {
 				if (error || result == null) {
 					response.status(500).json({success: false, data: error});
 				} else {
-					var vehicle2 = result[0];
-					response.status(200).json(vehicle2);
+					var vehicle2 = result;
+					var i;
+					for (i = 0; i < vehicle1.length; i++){
+						if (i % 2 == 1)
+						vehicle1[i] = vehicle2[i];
+					}
+
+					response.status(200).json(vehicle1);
 				}
 			});
 
