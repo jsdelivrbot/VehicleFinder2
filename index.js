@@ -40,7 +40,11 @@ function getVehicle(request, response) {
 						indexes.push(vehicle2[i].id);
 						}
 						else{
+							var j = i;
+							while(indexes.includes(vehicle1[j].id) && j < vehicle1.length)
+							   j++;
 							negate = -1;
+							vehicle1[i] = vehicle1[j];
 							indexes.push(vehicle1[i].id)
 						}
 					}
