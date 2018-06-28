@@ -38,6 +38,7 @@ function getVehicle(request, response) {
 						if (negate == -1 && !indexes.includes(vehicle2[i].id)){
 							negate = 1;
 						vehicle3.push(vehicle2[i]);
+						console.log("ONE: " + vehicle2[i].id);
 						indexes.push(vehicle2[i].id);
 						}
 						else{
@@ -47,11 +48,11 @@ function getVehicle(request, response) {
 								    j = 0;
 								else
 							   		j++;
-								 console.log(j + " ");
 							 }
 							negate = -1;
 							vehicle3.push(vehicle1[j]);
-							indexes.push(vehicle1[i].id)
+							console.log("TWO: " + vehicle1[j].id);
+							indexes.push(vehicle1[j].id)
 						}
 					}
 
