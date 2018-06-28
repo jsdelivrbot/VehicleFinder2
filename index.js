@@ -41,8 +41,10 @@ function getVehicle(request, response) {
 						}
 						else{
 							var j = i;
-							while(indexes.includes(vehicle1[j].id) && j < vehicle1.length)
+							while(indexes.includes(vehicle1[j].id) && j < vehicle1.length){
 							   j++;
+								 console.log(j + " ");
+							 }
 							negate = -1;
 							vehicle1[i] = vehicle1[j];
 							indexes.push(vehicle1[i].id)
@@ -89,7 +91,7 @@ function getVehicleFromDb(pri1, callback) {
 			callback(err, null);
 		}
 
-		console.log("Found result: " + JSON.stringify(result.rows));
+		//console.log("Found result: " + JSON.stringify(result.rows));
 		callback(null, result.rows);
 	});
 
