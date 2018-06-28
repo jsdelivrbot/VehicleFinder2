@@ -32,22 +32,22 @@ function getVehicle(request, response) {
 function getVehicleFromDb(pri1, pri2, callback) {
 	console.log("Getting vehicle from DB with pri1: " + pri1 + " and pri2: " + pri2);
 	switch(pri1) {
-    case 1:
-        var sql = "SELECT * FROM vehicle ORDER BY type DESC LIMIT 1";
+    case "1":
+        var sql = "SELECT * FROM vehicle ORDER BY type DESC";
         break;
-    case 2:
-        var sql = "SELECT * FROM vehicle ORDER BY weight DESC LIMIT 1";
+    case "2":
+        var sql = "SELECT * FROM vehicle ORDER BY weight DESC";
         break;
-		case 3:
+		case "3":
         var sql = "SELECT * FROM vehicle ORDER BY power DESC";
         break;
-		case 4:
+		case "4":
 				var sql = "SELECT * FROM vehicle ORDER BY size DESC";
 				break;
-		case 5:
+		case "5":
 				var sql = "SELECT * FROM vehicle ORDER BY speed DESC";
 				break;
-		case 6:
+		case "6":
 				var sql = "SELECT * FROM vehicle ORDER BY price DESC";
 				break;
     default:
