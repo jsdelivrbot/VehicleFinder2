@@ -36,7 +36,7 @@ function getVehicle(request, response) {
 						vehicle1[i] = vehicle2[i];
 					}
 
-					response.status(200).json(vehicle1);
+					response.status(200).json(vehicle1[0].id);
 				}
 			});
 
