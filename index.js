@@ -30,7 +30,7 @@ function getVehicle(request, response) {
 					response.status(500).json({success: false, data: error});
 				} else {
 					var vehicle2 = result[0];
-					response.status(200).json(vehicle1);
+					response.status(200).json(vehicle2);
 				}
 			});
 
