@@ -30,13 +30,22 @@ function getVehicle(request, response) {
 					response.status(500).json({success: false, data: error});
 				} else {
 					var vehicle2 = result;
+					var indexes = [];
 					var i;
+					var negate = 1;
 					for (i = 0; i < vehicle1.length; i++){
-						if (i % 2 == 1)
+						if (negate == -1 && !indexes.includes(vehicle2[i].id)){
+							negate = 1;
 						vehicle1[i] = vehicle2[i];
+						indexes.push(vehicle2[i].id);
+						}
+						else{
+							negate = -1;
+							indexes.push(vehicle1[i].id)
+						}
 					}
 
-					response.status(200).json(vehicle1[0].id);
+					response.status(200).json(vehicle1);
 				}
 			});
 
