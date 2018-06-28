@@ -30,28 +30,32 @@ function getVehicle(request, response) {
 					response.status(500).json({success: false, data: error});
 				} else {
 					var vehicle2 = result;
+					var vehicle3 = [];
 					var indexes = [];
 					var i;
 					var negate = 1;
 					for (i = 0; i < vehicle1.length; i++){
 						if (negate == -1 && !indexes.includes(vehicle2[i].id)){
 							negate = 1;
-						vehicle1[i] = vehicle2[i];
+						vehicle3.push(vehicle2[i]);
 						indexes.push(vehicle2[i].id);
 						}
 						else{
 							var j = i;
-							while(indexes.includes(vehicle1[j].id) && j + 1 < vehicle1.length){
-							   j++;
+							while(indexes.includes(vehicle1[j].id) && (j + 1) % vehicle1.length != i){
+								if (j + 1 == vehicle1.length)
+								    j = 0;
+								else
+							   		j++;
 								 console.log(j + " ");
 							 }
 							negate = -1;
-							vehicle1[i] = vehicle1[j];
+							vehicle3.push(vehicle1[j]);
 							indexes.push(vehicle1[i].id)
 						}
 					}
 
-					response.status(200).json(vehicle1);
+					response.status(200).json(vehicle3);
 				}
 			});
 
