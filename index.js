@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 const { Pool } = require("pg");
-const connectionString = "postgres://kqbjayaoloktbi:53ca815c90f87a7674987395b394905de14898d1ae59f091d9dd8ab1ca10173c@ec2-54-83-12-150.compute-1.amazonaws.com:5432/dbvslumrik88hn";
+const connectionString = "postgres://naocgjydoypbdv:21ad27e80d9c10dd0b0438d3f03477ef52d43cb1419643b4c63100afec9f19c5@ec2-54-83-59-144.compute-1.amazonaws.com:5432/d2ll6noaicerng";
 const pool = new Pool({connectionString: connectionString});
 
 app.set('port', (process.env.PORT || 5000));
