@@ -27,6 +27,7 @@ function handleResultList(result){
   var resultList = $("#ulResults");
   var resultList2 = $("#ulResults2");
   var i = 0;
+  resultList.empty();
   while (i < 8)
   {
       resultList.append(obj[i].name + "<img src='./" + obj[i].pic + "'></img>");
