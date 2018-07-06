@@ -17,8 +17,8 @@ function search(){
   var pri1 = pri.options[pri.selectedIndex].value;
       pri = document.getElementById("priority2");
   var pri2 = pri.options[pri.selectedIndex].value;
-var sort1 = document.getElementById("sort1");
-var sort2 = document.getElementById("sort2");
+var sort1 = document.getElementsByName('sort1');
+var sort2 = document.getElementsByName('sort2');
 var high1 = false;
 var high2 = false;
 if (sort1[0].checked)
