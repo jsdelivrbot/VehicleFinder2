@@ -70,8 +70,9 @@ function getVehicle(request, response) {
 	});
 }
 
-function getVehicleFromDb(pri1, high2, callback) {
+function getVehicleFromDb(pri1, high, callback) {
 	console.log("Getting vehicle from DB with pri1: " + pri1);
+	if (high)
 	switch(pri1) {
     case "1":
         var sql = "SELECT * FROM vehicle ORDER BY type DESC";
@@ -94,6 +95,30 @@ function getVehicleFromDb(pri1, high2, callback) {
     default:
         var sql = "SELECT * FROM vehicle ORDER BY fuel_economy DESC";
 }
+else
+switch(pri1) {
+	case "1":
+			var sql = "SELECT * FROM vehicle ORDER BY type";
+			break;
+	case "2":
+			var sql = "SELECT * FROM vehicle ORDER BY weight";
+			break;
+	case "3":
+			var sql = "SELECT * FROM vehicle ORDER BY power";
+			break;
+	case "4":
+			var sql = "SELECT * FROM vehicle ORDER BY size";
+			break;
+	case "5":
+			var sql = "SELECT * FROM vehicle ORDER BY speed";
+			break;
+	case "6":
+			var sql = "SELECT * FROM vehicle ORDER BY price";
+			break;
+	default:
+			var sql = "SELECT * FROM vehicle ORDER BY fuel_economy";
+}
+
 	//var params = [pri1, pri2];
 	pool.query(sql, function(err, result) {
 		if (err) {
