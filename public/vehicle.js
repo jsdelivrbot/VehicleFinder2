@@ -18,7 +18,15 @@ function search(){
       pri = document.getElementById("priority2");
   var pri2 = pri.options[pri.selectedIndex].value;
 var sort1 = document.getElementById("sort1");
-console.log(sort1);
+var sort2 = document.getElementById("sort2");
+var high1 = false;
+var high2 = false;
+if (sort1[0].checked)
+  high1 = true;
+if (sort2[0].checked)
+  high2 = true;
+console.log(high1);
+console.log(high2);
 
   var url = "/getVehicle?pri1=" + pri1 + "&pri2=" + pri2;
   callAjax(url, handleResultList);

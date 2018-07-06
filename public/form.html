@@ -8,11 +8,11 @@
 <body>
 	<h1>Vehicle Finder</h1>
 
-<form>
+
 	<form method="get">
 	Priority 1<br>
-		<input type="radio" id="sort1" value=1 checked ng-model="firstName"> Highest<br>
-		<input type="radio" id="sort1" value=0 ng-model="lastName"> Lowest<br>
+		<input type="radio" name="sort1" id="sort1" checked> Highest<br>
+		<input type="radio" name="sort1" id="sort1"> Lowest<br>
 
 		<select id="priority1">
 			<option value=2>Weight (lbs)</option>
@@ -26,8 +26,8 @@
 
 	<form method="get">
 	Priority 2<br>
-		<input type="radio" id="sort2" value=1 checked> Highest<br>
-		<input type="radio" id="sort2" value=0> Lowest<br>
+		<input type="radio" name="sort2" id="sort2" checked> Highest<br>
+		<input type="radio" name="sort2" id="sort2"> Lowest<br>
 
 		<select id="priority2">
 			<option value=2>Weight (lbs)</option>
@@ -39,7 +39,7 @@
 		</select>
 	</form><br>
 	<input type="submit" onclick="search()">
-</form>
+
 <ul id=ulResults></ul>
 <ul id=ulResults2></ul>
 </body>
