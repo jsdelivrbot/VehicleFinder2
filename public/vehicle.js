@@ -29,7 +29,7 @@ function handleResultList(result){
   var i = 0;
   while (i < 8)
   {
-      resultList.append(obj[i].name + " ");
+      resultList.append(obj[i].name + "<img src='./" + obj[i].pic + "'></img>");
       i++;
   }
 }
