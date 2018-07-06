@@ -40,7 +40,7 @@ function handleResultList(result){
   resultList.empty();
   while (i < 8)
   {
-      resultList.append("<img src='./" + obj[i].pic + "'></img><table><tr><th>Name</th><th>Weight (LBS)</th><th>Power (HP)</th><th>Size (FT CUBED)</th><th>Speed (MPH)</th><th>Price ($)</th><th>Fuel Economy (MPG)</th></tr><tr><td>" + obj[i].name + "</td></tr></table><br>");
+      resultList.append("<img src='./" + obj[i].pic + "'></img><table><tr><th>Name</th><th>Weight (LBS)</th><th>Power (HP)</th><th>Size (FT CUBED)</th><th>Speed (MPH)</th><th>Price ($)</th><th>Fuel Economy (MPG)</th></tr><tr><td>" + obj[i].name + "</td><td>" + obj[i].weight + "</td><td>" + obj[i].power + "</td><td>" + obj[i].size + "</td><td>" + obj[i].speed + "</td><td>" + obj[i].price + "</td><td>" + obj[i].fuel_economy + "</td></tr></table><br>");
       i++;
   }
 }
