@@ -29,5 +29,6 @@ function search(){
 function handleResultList(result){
   console.log("Back from AJAX with result:");
   var obj = JSON.parse(result);
-  console.log(obj);
+  console.log(obj[0]);
+  console.log(obj[0].name);
 }
