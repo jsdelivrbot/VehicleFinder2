@@ -19,6 +19,8 @@ app.listen(app.get('port'), function() {
 function getVehicle(request, response) {
 	var pri1 = request.query.pri1;
 	var pri2 = request.query.pri2;
+	console.log(pri1);
+	console.log(pri2);
 	getVehicleFromDb(pri1, function(error, result) {
 		if (error || result == null) {
 			response.status(500).json({success: false, data: error});
