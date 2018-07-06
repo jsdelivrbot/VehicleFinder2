@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<!--<script src="core.js"></script> -->
 <head>
 	<title>Vehicle Finder</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="vehicle.js"></script>
 </head>
 <body>
 	<h1>Vehicle Finder</h1>
 
-	<div ng-app="myApp" ng-controller="personCtrl">
-
-	First Name: <input type="text" ng-model="firstName"><br>
-	Last Name: <input type="text" ng-model="lastName"><br>
-	<br>
-	Full Name: {{fullName()}}
-
-	</div>
-
-<div ng-app = "myApp2" ng-controller="myCtrl">
+<form>
 	<form method="get">
 	Priority 1<br>
 		<input type="radio" name="sort" value="high" checked ng-model="firstName"> Highest<br>
 		<input type="radio" name="sort" value="low" ng-model="lastName"> Lowest<br>
 
 		<select name="priority1">
-			<option selected> </option>
 			<option>Weight (lbs)</option>
 			<option>Power (horsepower)</option>
 			<option>Size (cubic feet)</option>
@@ -32,35 +22,7 @@
 			<option>Price ($)</option>
 			<option>Fuel Economy (mpg)</option>
 		</select>
-		<br>
-		Vehicle: {{fullName()}}
 	</form><br>
-</div>
-
-<script>
-var express = require('express');
-var router = express.Router();
-var pg = require('pg');
-var app = angular.module('myApp', []);
-
-app.controller('myCtrl', function($scope) {
-  pg.connect(conString, function(err, client, done) {
-    if (err) {
-      return console.error('error fetching client from pool', err);
-    }
-    console.log("connected to database");
-    client.query('SELECT name FROM vehicle', function(err, result) {
-      done();
-      if (err) {
-        return console.error('error running query', err);
-      }
-      $scope.fullName = function() {
-        return result.rows[0].name + " " + result.rows[1].name;
-      };
-    });
-  });
-});
-</script>
 
 	<form method="get">
 	Priority 2<br>
@@ -68,7 +30,6 @@ app.controller('myCtrl', function($scope) {
 		<input type="radio" name="sort" value="low"> Lowest<br>
 
 		<select name="priority2">
-			<option selected> </option>
 			<option>Weight (lbs)</option>
 			<option>Power (horsepower)</option>
 			<option>Size (cubic feet)</option>
@@ -77,71 +38,10 @@ app.controller('myCtrl', function($scope) {
 			<option>Fuel Economy (mpg)</option>
 		</select>
 	</form><br>
+	<input type="submit" onclick="search()">
+</form>
 
-	<form method="get">
-	Priority 3<br>
-		<input type="radio" name="sort" value="high" checked> Highest<br>
-		<input type="radio" name="sort" value="low"> Lowest<br>
-
-		<select name="priority3">
-			<option selected> </option>
-			<option>Weight (lbs)</option>
-			<option>Power (horsepower)</option>
-			<option>Size (cubic feet)</option>
-			<option>Speed (mph)</option>
-			<option>Price ($)</option>
-			<option>Fuel Economy (mpg)</option>
-		</select>
-	</form><br>
-
-	<form method="get">
-	Priority 4<br>
-		<input type="radio" name="sort" value="high" checked> Highest<br>
-		<input type="radio" name="sort" value="low"> Lowest<br>
-
-		<select name="priority4">
-			<option selected> </option>
-			<option>Weight (lbs)</option>
-			<option>Power (horsepower)</option>
-			<option>Size (cubic feet)</option>
-			<option>Speed (mph)</option>
-			<option>Price ($)</option>
-			<option>Fuel Economy (mpg)</option>
-		</select>
-	</form><br>
-
-	<form method="get">
-	Priority 5<br>
-		<input type="radio" name="sort" value="high" checked> Highest<br>
-		<input type="radio" name="sort" value="low"> Lowest<br>
-
-		<select name="priority5">
-			<option selected> </option>
-			<option>Weight (lbs)</option>
-			<option>Power (horsepower)</option>
-			<option>Size (cubic feet)</option>
-			<option>Speed (mph)</option>
-			<option>Price ($)</option>
-			<option>Fuel Economy (mpg)</option>
-		</select>
-	</form><br>
-
-	<form method="get">
-	Priority 6<br>
-		<input type="radio" name="sort" value="high" checked> Highest<br>
-		<input type="radio" name="sort" value="low"> Lowest<br>
-
-		<select name="priority6">
-			<option selected> </option>
-			<option>Weight (lbs)</option>
-			<option>Power (horsepower)</option>
-			<option>Size (cubic feet)</option>
-			<option>Speed (mph)</option>
-			<option>Price ($)</option>
-			<option>Fuel Economy (mpg)</option>
-		</select>
-	</form><br>
-
-
+<ul id=ulResults></ul>
+<ul id=ulResults2></ul>
 </body>
 </html>
