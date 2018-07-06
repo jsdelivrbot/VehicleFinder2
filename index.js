@@ -19,13 +19,15 @@ app.listen(app.get('port'), function() {
 function getVehicle(request, response) {
 	var pri1 = request.query.pri1;
 	var pri2 = request.query.pri2;
-	getVehicleFromDb(pri1, function(error, result) {
+	var high1 = request.query.high1;
+	var high2 = request.query.high2;
+	getVehicleFromDb(pri1, high1, function(error, result) {
 		if (error || result == null) {
 			response.status(500).json({success: false, data: error});
 		} else {
 			var vehicle1 = result;
 
-			getVehicleFromDb(pri2, function(error, result) {
+			getVehicleFromDb(pri2, high2, function(error, result) {
 				if (error || result == null) {
 					response.status(500).json({success: false, data: error});
 				} else {
@@ -68,7 +70,7 @@ function getVehicle(request, response) {
 	});
 }
 
-function getVehicleFromDb(pri1, callback) {
+function getVehicleFromDb(pri1, high2, callback) {
 	console.log("Getting vehicle from DB with pri1: " + pri1);
 	switch(pri1) {
     case "1":

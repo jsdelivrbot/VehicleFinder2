@@ -25,10 +25,8 @@ if (sort1[0].checked)
   high1 = true;
 if (sort2[0].checked)
   high2 = true;
-console.log(high1);
-console.log(high2);
 
-  var url = "/getVehicle?pri1=" + pri1 + "&pri2=" + pri2;
+  var url = "/getVehicle?pri1=" + pri1 + "&pri2=" + pri2 + "&high1=" + high1 + "&high2=" + high2;
   callAjax(url, handleResultList);
 }
 
