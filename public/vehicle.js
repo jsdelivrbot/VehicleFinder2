@@ -19,12 +19,12 @@ function search(){
   var pri2 = pri.options[pri.selectedIndex].value;
 var sort1 = document.getElementsByName('sort1');
 var sort2 = document.getElementsByName('sort2');
-var high1 = false;
-var high2 = false;
+var high1 = 0;
+var high2 = 0;
 if (sort1[0].checked)
-  high1 = true;
+  high1 = 1;
 if (sort2[0].checked)
-  high2 = true;
+  high2 = 1;
 
   var url = "/getVehicle?pri1=" + pri1 + "&pri2=" + pri2 + "&high1=" + high1 + "&high2=" + high2;
   callAjax(url, handleResultList);
