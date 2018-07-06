@@ -24,6 +24,7 @@ function search(){
 function handleResultList(result){
   console.log("Back from AJAX with result:");
   var obj = JSON.parse(result);
+  console.log(obj);
   var resultList = $("#ulResults");
   var resultList2 = $("#ulResults2");
   var i = 0;
