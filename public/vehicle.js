@@ -18,6 +18,7 @@ function search(){
       pri = document.getElementById("priority2");
   var pri2 = pri.options[pri.selectedIndex].value;
   var url = "/getVehicle?pri1=" + pri1 + "&pri2=" + pri2;
+  console.log(url);
   callAjax(url, handleResultList);
   var resultList = $("#ulResults");
   var resultList2 = document.getElementById("ulResults2");
