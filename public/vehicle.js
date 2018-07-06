@@ -33,14 +33,14 @@ if (sort2[0].checked)
 function handleResultList(result){
   console.log("Back from AJAX with result:");
   var obj = JSON.parse(result);
-  console.log(obj);
+  //console.log(obj);
   var resultList = $("#ulResults");
   var resultList2 = $("#ulResults2");
   var i = 0;
   resultList.empty();
   while (i < 8)
   {
-      resultList.append(obj[i].name + "<img src='./" + obj[i].pic + "'></img>");
+      resultList.append(obj[i].name + "<img src='./" + obj[i].pic + "'></img><table><tr><th>Name</th><th>Weight (LBS)</th><th>Power (HP)</th><th>Size (FT CUBED)</th><th>Speed (MPH)</th><th>Price ($)</th><th>Fuel Economy (MPG)</th></tr></table><br>");
       i++;
   }
 }

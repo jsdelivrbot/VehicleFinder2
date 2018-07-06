@@ -72,9 +72,7 @@ function getVehicle(request, response) {
 
 function getVehicleFromDb(pri1, high, callback) {
 	console.log("Getting vehicle from DB with pri1: " + pri1);
-	console.log(high);
 	if (high == 1){
-		console.log("HIGH");
 		switch(pri1) {
 	    case "1":
 	        var sql = "SELECT * FROM vehicle ORDER BY type DESC";
@@ -99,7 +97,6 @@ function getVehicleFromDb(pri1, high, callback) {
 	}
 }
 else{
-			console.log("LOW");
 switch(pri1) {
 		case "1":
 				var sql = "SELECT * FROM vehicle ORDER BY type";
