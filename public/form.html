@@ -11,8 +11,8 @@
 <form>
 	<form method="get">
 	Priority 1<br>
-		<input type="radio" name="sort1" value="high" checked ng-model="firstName"> Highest<br>
-		<input type="radio" name="sort1" value="low" ng-model="lastName"> Lowest<br>
+		<input type="radio" id="sort1" value=1 checked ng-model="firstName"> Highest<br>
+		<input type="radio" id="sort1" value=0 ng-model="lastName"> Lowest<br>
 
 		<select id="priority1">
 			<option value=2>Weight (lbs)</option>
@@ -26,8 +26,8 @@
 
 	<form method="get">
 	Priority 2<br>
-		<input type="radio" name="sort2" value="high" checked> Highest<br>
-		<input type="radio" name="sort2" value="low"> Lowest<br>
+		<input type="radio" id="sort2" value=1 checked> Highest<br>
+		<input type="radio" id="sort2" value=0> Lowest<br>
 
 		<select id="priority2">
 			<option value=2>Weight (lbs)</option>

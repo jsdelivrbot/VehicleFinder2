@@ -56,7 +56,7 @@ function getVehicle(request, response) {
 							 }
 							negate = -1;
 							vehicle3.push(vehicle1[j]);
-							console.log("TWO: " + vehicle1[j].id);
+							//console.log("TWO: " + vehicle1[j].id);
 							indexes.push(vehicle1[j].id)
 							l++;
 						}

@@ -17,6 +17,9 @@ function search(){
   var pri1 = pri.options[pri.selectedIndex].value;
       pri = document.getElementById("priority2");
   var pri2 = pri.options[pri.selectedIndex].value;
+var sort1 = document.getElementById("sort1");
+console.log(sort1);
+
   var url = "/getVehicle?pri1=" + pri1 + "&pri2=" + pri2;
   callAjax(url, handleResultList);
 }
