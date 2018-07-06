@@ -19,21 +19,17 @@ function search(){
   var pri2 = pri.options[pri.selectedIndex].value;
   var url = "/getVehicle?pri1=" + pri1 + "&pri2=" + pri2;
   callAjax(url, handleResultList);
-  var resultList = $("#ulResults");
-  var resultList2 = document.getElementById("ulResults2");
-  i++;
-  resultList.append(i);
-  resultList2.append(i + 1 + "<br>");
 }
 
 function handleResultList(result){
   console.log("Back from AJAX with result:");
   var obj = JSON.parse(result);
   var resultList = $("#ulResults");
+  var resultList2 = $("#ulResults2");
   var i = 0;
-  while (obj[i])
+  while (i < 8)
   {
-      resultList.append(obj[i].name);
+      resultList.append(obj[i].name + " ");
       i++;
   }
 }
