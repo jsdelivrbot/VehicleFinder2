@@ -73,7 +73,7 @@ function getVehicle(request, response) {
 function getVehicleFromDb(pri1, high, callback) {
 	console.log("Getting vehicle from DB with pri1: " + pri1);
 	console.log(high);
-	if (high){
+	if (high == true){
 		console.log("HIGH");
 		switch(pri1) {
 	    case "1":
