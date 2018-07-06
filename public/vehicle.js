@@ -15,10 +15,15 @@ var i = 0;
 function search(){
   console.log("Searching...");
   var url = "/getVehicle?pri1=0&pri2=1";
-
+  callAjax(url, handleResultList);
   var resultList = $("#ulResults");
   var resultList2 = document.getElementById("ulResults2");
   i++;
   resultList.append(i);
   resultList2.append(i + 1 + "<br>");
+}
+
+function handleResultList(result){
+  console.log("Back from AJAX with result:");
+  console.log(result);
 }
