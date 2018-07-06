@@ -29,5 +29,5 @@ function search(){
 
 function handleResultList(result){
   console.log("Back from AJAX with result:");
-  console.log(result);
+  console.log(result[0].name);
 }
