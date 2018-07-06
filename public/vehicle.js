@@ -13,8 +13,11 @@ function callAjax(url, callback){
 
 var i = 0;
 function search(){
-  console.log("Searching...");
-  var url = "/getVehicle?pri1=0&pri2=1";
+  var pri = document.getElementById("priority1");
+  var pri1 = pri.options[pri.selectedIndex].value;
+      pri = document.getElementById("priority2");
+  var pri2 = pri.options[pri.selectedIndex].value;
+  var url = "/getVehicle?pri1=" + pri1 + "&pri2=" + pri2;
   callAjax(url, handleResultList);
   var resultList = $("#ulResults");
   var resultList2 = document.getElementById("ulResults2");

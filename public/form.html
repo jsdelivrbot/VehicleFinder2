@@ -11,31 +11,31 @@
 <form>
 	<form method="get">
 	Priority 1<br>
-		<input type="radio" name="sort" value="high" checked ng-model="firstName"> Highest<br>
-		<input type="radio" name="sort" value="low" ng-model="lastName"> Lowest<br>
+		<input type="radio" name="sort1" value="high" checked ng-model="firstName"> Highest<br>
+		<input type="radio" name="sort1" value="low" ng-model="lastName"> Lowest<br>
 
-		<select name="priority1">
-			<option>Weight (lbs)</option>
-			<option>Power (horsepower)</option>
-			<option>Size (cubic feet)</option>
-			<option>Speed (mph)</option>
-			<option>Price ($)</option>
-			<option>Fuel Economy (mpg)</option>
+		<select id="priority1">
+			<option value=1>Weight (lbs)</option>
+			<option value=2>Power (horsepower)</option>
+			<option value=3>Size (cubic feet)</option>
+			<option value=4>Speed (mph)</option>
+			<option value=5>Price ($)</option>
+			<option value=6>Fuel Economy (mpg)</option>
 		</select>
 	</form><br>
 
 	<form method="get">
 	Priority 2<br>
-		<input type="radio" name="sort" value="high" checked> Highest<br>
-		<input type="radio" name="sort" value="low"> Lowest<br>
+		<input type="radio" name="sort2" value="high" checked> Highest<br>
+		<input type="radio" name="sort2" value="low"> Lowest<br>
 
-		<select name="priority2">
-			<option>Weight (lbs)</option>
-			<option>Power (horsepower)</option>
-			<option>Size (cubic feet)</option>
-			<option>Speed (mph)</option>
-			<option>Price ($)</option>
-			<option>Fuel Economy (mpg)</option>
+		<select id="priority2">
+			<option value=1>Weight (lbs)</option>
+			<option value=2>Power (horsepower)</option>
+			<option value=3>Size (cubic feet)</option>
+			<option value=4>Speed (mph)</option>
+			<option value=5>Price ($)</option>
+			<option value=6>Fuel Economy (mpg)</option>
 		</select>
 	</form><br>
 	<input type="submit" onclick="search()">
