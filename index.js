@@ -21,8 +21,6 @@ function getVehicle(request, response) {
 	var pri2 = request.query.pri2;
 	var high1 = request.query.high1;
 	var high2 = request.query.high2;
-	console.log(high1);
-	console.log(high2);
 	getVehicleFromDb(pri1, high1, function(error, result) {
 		if (error || result == null) {
 			response.status(500).json({success: false, data: error});
@@ -74,6 +72,7 @@ function getVehicle(request, response) {
 
 function getVehicleFromDb(pri1, high, callback) {
 	console.log("Getting vehicle from DB with pri1: " + pri1);
+	console.log(high);
 	if (high){
 		console.log("HIGH");
 		switch(pri1) {
