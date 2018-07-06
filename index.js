@@ -72,53 +72,56 @@ function getVehicle(request, response) {
 
 function getVehicleFromDb(pri1, high, callback) {
 	console.log("Getting vehicle from DB with pri1: " + pri1);
-	if (high)
-	switch(pri1) {
-    case "1":
-        var sql = "SELECT * FROM vehicle ORDER BY type DESC";
-        break;
-    case "2":
-        var sql = "SELECT * FROM vehicle ORDER BY weight DESC";
-        break;
+	if (high){
+		console.log("HIGH");
+		switch(pri1) {
+	    case "1":
+	        var sql = "SELECT * FROM vehicle ORDER BY type DESC";
+	        break;
+	    case "2":
+	        var sql = "SELECT * FROM vehicle ORDER BY weight DESC";
+	        break;
+			case "3":
+	        var sql = "SELECT * FROM vehicle ORDER BY power DESC";
+	        break;
+			case "4":
+					var sql = "SELECT * FROM vehicle ORDER BY size DESC";
+					break;
+			case "5":
+					var sql = "SELECT * FROM vehicle ORDER BY speed DESC";
+					break;
+			case "6":
+					var sql = "SELECT * FROM vehicle ORDER BY price DESC";
+					break;
+	    default:
+	        var sql = "SELECT * FROM vehicle ORDER BY fuel_economy DESC";
+	}
+}
+else{
+			console.log("LOW");
+switch(pri1) {
+		case "1":
+				var sql = "SELECT * FROM vehicle ORDER BY type";
+				break;
+		case "2":
+				var sql = "SELECT * FROM vehicle ORDER BY weight";
+				break;
 		case "3":
-        var sql = "SELECT * FROM vehicle ORDER BY power DESC";
-        break;
+				var sql = "SELECT * FROM vehicle ORDER BY power";
+				break;
 		case "4":
-				var sql = "SELECT * FROM vehicle ORDER BY size DESC";
+				var sql = "SELECT * FROM vehicle ORDER BY size";
 				break;
 		case "5":
-				var sql = "SELECT * FROM vehicle ORDER BY speed DESC";
+				var sql = "SELECT * FROM vehicle ORDER BY speed";
 				break;
 		case "6":
-				var sql = "SELECT * FROM vehicle ORDER BY price DESC";
+				var sql = "SELECT * FROM vehicle ORDER BY price";
 				break;
-    default:
-        var sql = "SELECT * FROM vehicle ORDER BY fuel_economy DESC";
+		default:
+				var sql = "SELECT * FROM vehicle ORDER BY fuel_economy";
+	}
 }
-else
-switch(pri1) {
-	case "1":
-			var sql = "SELECT * FROM vehicle ORDER BY type";
-			break;
-	case "2":
-			var sql = "SELECT * FROM vehicle ORDER BY weight";
-			break;
-	case "3":
-			var sql = "SELECT * FROM vehicle ORDER BY power";
-			break;
-	case "4":
-			var sql = "SELECT * FROM vehicle ORDER BY size";
-			break;
-	case "5":
-			var sql = "SELECT * FROM vehicle ORDER BY speed";
-			break;
-	case "6":
-			var sql = "SELECT * FROM vehicle ORDER BY price";
-			break;
-	default:
-			var sql = "SELECT * FROM vehicle ORDER BY fuel_economy";
-}
-
 	//var params = [pri1, pri2];
 	pool.query(sql, function(err, result) {
 		if (err) {
