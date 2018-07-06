@@ -21,6 +21,8 @@ function getVehicle(request, response) {
 	var pri2 = request.query.pri2;
 	var high1 = request.query.high1;
 	var high2 = request.query.high2;
+	console.log(high1);
+	console.log(high2);
 	getVehicleFromDb(pri1, high1, function(error, result) {
 		if (error || result == null) {
 			response.status(500).json({success: false, data: error});
